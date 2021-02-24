@@ -52,7 +52,7 @@ Interactive zero-knowledge proofs require interaction between the individual (or
 <img src="Assets/BA_ZKP_Registration.jpg" width="400" align="center">
 </p>  
 
-    -  We now, generate different combinations that can generate the magic constant (i.e., 100) as seen below. We get 15 different sets (4 Rows, 4 Columns, 2 Main Diagonals, 5 Squares) from this the user selects 'n' sets which is stored in the application server for later verification which is referred as "Selectively Generated Sets (SGS)".
+   - We now, generate different combinations that can generate the magic constant (i.e., 100) as seen below. We get 15 different sets (4 Rows, 4 Columns, 2 Main Diagonals, 5 Squares) from this the user selects 'n' sets which is stored in the application server for later verification which is referred as "Selectively Generated Sets (SGS)".
    
       ```
       [1]  => { 24, 2, 19, 55 }
@@ -72,7 +72,7 @@ Interactive zero-knowledge proofs require interaction between the individual (or
       [15] => { 18, -1, 26, 57 }
       ```
 
-    - In real case, most of the DOB are publicly available as part of Social Media Profiles and friends & family knowing this information. We propose to use additional :secret: to generate a modified birthday magic square with same properties. 
+   - In real case, most of the DOB are publicly available as part of Social Media Profiles and friends & family knowing this information. We propose to use additional :secret: to generate a modified birthday magic square with same properties. 
 
       Birthday Magic Square with :secret: 10
     
@@ -100,9 +100,7 @@ Interactive zero-knowledge proofs require interaction between the individual (or
       [14] => { 67, 27, 35, 11 }
       [15] => { 28, 9, 36, 67 }
       ```
-    - To provide security and privacy these values are not stored as such, but the cryptographic hash values are stored.
-
-      :hash: SHA3-512 hash values
+   - To provide security and privacy these values are not stored as such, but the cryptographic hash values are stored. Below we have used the :hash: SHA3-512 algorithm.
     
        ```
       [1]  => fa8a3c803410335e92daa008418a37c71591f9eb04010b32e0d7dffabb416eebc635dada0fe21669db27337e9735da94bb138c2e59cb966ca2e5cefed4a7713b
@@ -134,6 +132,18 @@ Interactive zero-knowledge proofs require interaction between the individual (or
 
   - Any unknown third party malicious actors who randomly performs vishing attack on potential targets to reveal details for personal gains.
   - Any known malicious actors who targets for personal gains. 
+
+# Conclusion
+   In this proposed Birthday Anonymizer, we anonymize the given Birthday with the use of Ramanujan's Birthday Magic Square with additional secret value. We have created a ZKP based verifier which verifies the date of birth by revealing only the Selectively Generated Sets (SGS) which is stored in the service provider side. This ensures that no customer executive or third party can gain knowledge of your original DOB. 
+   After the implementation of this system, you can use the DOB directly if you are using the applications to avail services and share only one set from the SGS to autheticate and verify yourself to any external party.
+   
+# Implementation
+   In the actual system of implementation,
+   - the magic square can be randomized as much.
+   - the pattern can be as complicated as possible for generating the hash values (say { 12, 28, 36, 64 } or [ 12, 28, 36, 64 ] or any pattern)
+   - the number of sets can also be increased with different combinations from the basic 15 sets (ensuring only that these numbers add to magic constant). 
+   - Even if there are 100s of sets generated, only selected sets are stored in the system for later verification.
+   - The service provider can allow the users to update this SGS in a stipulated interval.
 
 # References 
 
