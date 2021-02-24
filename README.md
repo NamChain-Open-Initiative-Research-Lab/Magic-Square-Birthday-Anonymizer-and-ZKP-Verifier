@@ -1,11 +1,11 @@
-# Birth-Date-Anonymizer
-Birth Date Anonymizer and Zero Knowledge Verifier based on Ramanujan's Magic Square
+# Birthday Anonymizer and ZKP Verifier
+Birthday Anonymizer and Zero Knowledge Verifier based on Ramanujan's Magic Square
 
 # Problem Statement
 
 **Date of Birth (DOB)** is one important identity and documentary proof that is widely used and accepted by various government and private organizations. **Birth Certificate** is a documentary proof that we submit whenever we need to prove our identity and age to avail services from Government or non-governmental organization.  Most common use where most of us are requested for date of birth :date: is during a verification call :telephone_receiver: from customer care :information_desk_person: from banks :bank:, for example say to verify your identity to issue a credit card :credit_card:. 
 
-The Vishing attacks (Phishing through voice calls) are increasing where the attacker or malicious person tries to get the date of birth :date: and OTP :vibration_mode: to steal money from our account by protraying as authorities from financial institutions. 
+The Vishing attacks (Phishing through voice calls) are increasing where the attacker or malicious person tries to get the date of birth :date: and OTP :vibration_mode: to steal money from our account by portraying as authorities from financial institutions. 
 
 # Zero Knowledge Proof (ZKP)
 
@@ -32,24 +32,27 @@ Interactive zero-knowledge proofs require interaction between the individual (or
    | MM-2 | DD+2 | YY+2 | yy-2 |
    | yy+1 | YY-1 | DD+1 | MM-1 |
 
-   Example with a date :date: : 24-02-1955 (Steve Jobs)
+   Example with a date :date: : 24-02-1955 (Steve Paul Jobs)
 
-   | 24 | 2 | 19 | 55 | 
-   |---|---|---|---|
-   | 56 | 18 | -1 | 27 | 
-   | 0  | 26 | 57 | 17 |
-   | 20 | 54 | 25 | 1 |
+<p align="center">
+<img src="Assets/BA_ZKP_Birthday_Magic_Square.png" width="150" align="center">
+</p>  
 
    :dart: **Magic Constant : 100**
    
 # Anonymizer and ZKP Verifier   
    
-  I propose to use the Ramanujan's Magic Square to create a system that anonymizes the Birth Date before storing in the Database of Service Provider and use a Zero Knowledge Proof Verifier to verify as and when needed. 
+  Proposing to use the Ramanujan's Magic Square to create a system that anonymizes the Birth Date before storing in the Database of Service Provider and use a Zero Knowledge Proof Verifier to verify as and when needed. 
   
   - **Generation** 
   
-    - Assume Mr. Steve Paul Jobs wishes to register with a service provider. The said service provider has the proposed Anonymizer and ZKP Verifier. So during registration once he enters the DOB and registers. The magic square is created (as shown above). 
-    -  We now, generate different combinations that can generate the magic constant (i.e., 100) as seen below. Every Row (4 Rows), Every Column (4 Columns), 2 Main Diagonals, 5 Squares. 
+    - Assume Mr. Steve Paul Jobs wishes to register with a service provider. The said service provider has the proposed Anonymizer and ZKP Verifier. So during registration once he enters the DOB and registers. The magic square is created (as shown above).
+
+<p align="center">
+<img src="Assets/BA_ZKP_Registration.jpg" width="400" align="center">
+</p>  
+
+    -  We now, generate different combinations that can generate the magic constant (i.e., 100) as seen below. We get 15 different sets (4 Rows, 4 Columns, 2 Main Diagonals, 5 Squares) from this the user selects 'n' sets which is stored in the application server for later verification which is referred as "Selectively Generated Sets (SGS)".
    
       ```
       [1]  => { 24, 2, 19, 55 }
@@ -69,7 +72,7 @@ Interactive zero-knowledge proofs require interaction between the individual (or
       [15] => { 18, -1, 26, 57 }
       ```
 
-    - For the users whose date of birth is already known publicly can use a additioanl :secret:  to generate a slightly modified birthday magic square with same properties. 
+    - In real case, most of the DOB are publicly available as part of Social Media Profiles and friends & family knowing this information. We propose to use additional :secret: to generate a modified birthday magic square with same properties. 
 
       Birthday Magic Square with :secret: 10
     
@@ -123,8 +126,14 @@ Interactive zero-knowledge proofs require interaction between the individual (or
   
       - Now when Mr. Steve Paul Jobs is requested for date of birth :date: during any verification call :telephone_receiver: from customer care :information_desk_person:, he can just issue one of these numbers, without actually revealing the date of birth, now he can be verified. 
 
-# Next Steps (Future Work)
+<p align="center">
+<img src="Assets/BA_ZKP_Verification.jpg" width="450" align="center">
+</p>  
 
+# Threat Model and Actors
+
+  - Any unknown third party malicious actors who randomly performs vishing attack on potential targets to reveal details for personal gains.
+  - Any known malicious actors who targets for personal gains. 
 
 # References 
 
