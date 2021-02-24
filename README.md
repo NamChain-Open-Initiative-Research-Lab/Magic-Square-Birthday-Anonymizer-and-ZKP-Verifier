@@ -34,9 +34,9 @@ Interactive zero-knowledge proofs require interaction between the individual (or
 
    Example with a date :date: : 24-02-1955 (Steve Paul Jobs)
 
-<p align="center">
-<img src="Assets/BA_ZKP_Birthday_Magic_Square.png" width="150" align="center">
-</p>  
+   <p align="center">
+   <img src="Assets/BA_ZKP_Birthday_Magic_Square.png" width="150" align="center">
+   </p>  
 
    :dart: **Magic Constant : 100**
    
@@ -46,13 +46,13 @@ Interactive zero-knowledge proofs require interaction between the individual (or
   
   - **Generation** 
   
-    - Assume Mr. Steve Paul Jobs wishes to register with a service provider. The said service provider has the proposed Anonymizer and ZKP Verifier. So during registration once he enters the DOB and registers. The magic square is created (as shown above).
+    - Assume _Mr. Steve Paul Jobs_ wishes to register with a service provider. The said service provider has the proposed Anonymizer and ZKP Verifier. So during registration         once he enters the DOB and registers. The magic square is created (as shown above).
 
 <p align="center">
 <img src="Assets/BA_ZKP_Registration.jpg" width="400" align="center">
 </p>  
 
-   - We now, generate different combinations that can generate the magic constant (i.e., 100) as seen below. We get 15 different sets (4 Rows, 4 Columns, 2 Main Diagonals, 5 Squares) from this the user selects 'n' sets which is stored in the application server for later verification which is referred as "Selectively Generated Sets (SGS)".
+   - We now, generate different combinations that can generate the magic constant (i.e., 100) as seen below. We get 15 different sets (4 Rows, 4 Columns, 2 Main Diagonals, 5      Squares) from this the user selects 'n' sets which is stored in the application server for later verification which is referred as "Selectively Generated Sets (SGS)".
    
       ```
       [1]  => { 24, 2, 19, 55 }
@@ -72,7 +72,7 @@ Interactive zero-knowledge proofs require interaction between the individual (or
       [15] => { 18, -1, 26, 57 }
       ```
 
-   - In real case, most of the DOB are publicly available as part of Social Media Profiles and friends & family knowing this information. We propose to use additional :secret: to generate a modified birthday magic square with same properties. 
+   - In real case, most of the DOB are publicly available as part of Social Media Profiles and friends & family knowing this information. We propose to use additional              :secret: to generate a modified birthday magic square with same properties. 
 
       Birthday Magic Square with :secret: 10
     
@@ -122,11 +122,11 @@ Interactive zero-knowledge proofs require interaction between the individual (or
       
   - **Verification**
   
-      - Now when Mr. Steve Paul Jobs is requested for date of birth :date: during any verification call :telephone_receiver: from customer care :information_desk_person:, he can just issue one of these numbers, without actually revealing the date of birth, now he can be verified. 
+      - Now when Mr. Steve Paul Jobs is requested for date of birth :date: during any verification call :telephone_receiver: from customer care :information_desk_person:, he         can just issue one of these numbers, without actually revealing the date of birth, now he can be verified. 
 
-<p align="center">
-<img src="Assets/BA_ZKP_Verification.jpg" width="450" align="center">
-</p>  
+   <p align="center">
+   <img src="Assets/BA_ZKP_Verification.jpg" width="450" align="center">
+   </p>  
 
 # Threat Model and Actors
 
@@ -134,19 +134,21 @@ Interactive zero-knowledge proofs require interaction between the individual (or
   - Any known malicious actors who targets for personal gains. 
 
 # Conclusion
-   In this proposed Birthday Anonymizer, we anonymize the given Birthday with the use of Ramanujan's Birthday Magic Square with additional secret value. We have created a ZKP based verifier which verifies the date of birth by revealing only the Selectively Generated Sets (SGS) which is stored in the service provider side. This ensures that no customer executive or third party can gain knowledge of your original DOB. 
-   After the implementation of this system, you can use the DOB directly if you are using the applications to avail services and share only one set from the SGS to autheticate and verify yourself to any external party.
+   In this proposed Birthday Anonymizer, we anonymize the given Birthday with the use of Ramanujan's Birthday Magic Square with additional secret value. We have created a ZKP based verifier which verifies the date of birth by revealing only the Selectively Generated Sets (SGS) which is stored in the service provider application server/database. This ensures that no customer executive or third party can gain knowledge of the user's actual DOB. 
+   After the implementation of this system, the user when using only the service provider (web/mobile) applications to avail services directly can use the DOB in the field provided. If the user is contacted for any service activation or customer executive for any authentication then share any set from the SGS to any external third-party.
    
 # Implementation
    In the actual system of implementation,
-   - the magic square can be randomized as much.
-   - the pattern can be as complicated as possible for generating the hash values (say { 12, 28, 36, 64 } or [ 12, 28, 36, 64 ] or any pattern)
-   - the number of sets can also be increased with different combinations from the basic 15 sets (ensuring only that these numbers add to magic constant). 
-   - Even if there are 100s of sets generated, only selected sets are stored in the system for later verification.
-   - The service provider can allow the users to update this SGS in a stipulated interval.
+   - the Magic Square can be randomized in numerous other ways.
+   - the pattern can be customized (to complicate) for generating the hash values (say { 12, 28, 36, 64 } or [ 12, 28, 36, 64 ] or any pattern)
+   - the number of sets if required can also be increased by taking different combinations from the basic 15 sets from the magic square (ensuring only that these numbers add      to the magic constant). 
+   - Even if there are 100s of sets generated, only selected sets are stored in the application server for later verification.
+   - The service provider can allow the users to update this secret and regenerate the new magic square and SGS periodically. 
 
 # References 
 
   - Magic Square and Ramanujan's Birthday Magic Square. Wikipedia. https://en.wikipedia.org/wiki/Magic_square
   - Feige, U., Fiat, A. & Shamir, A. Zero-knowledge proofs of identity. J. Cryptology 1, 77–94 (1988). https://doi.org/10.1007/BF02351717
   
+# Cite as
+Ramaguru R. Birthday Anonymizer and Zero Knowledge Verifier based on Ramanujan's Magic Square. NamChain Open Initiative Research Lab. Feb 24, 2021. https://namchain-open-initiative-research-lab.github.io/Birthday-Anonymizer-ZKP-Verifier/
