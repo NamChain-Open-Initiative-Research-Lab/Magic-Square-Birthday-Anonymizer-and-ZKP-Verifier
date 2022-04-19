@@ -1,4 +1,4 @@
-# Birthday Anonymizer and ZKP Verifier
+# Magic Square Birthday Anonymizer and ZKP Verifier
 Birthday Anonymizer and Zero Knowledge Verifier based on Ramanujan's Magic Square
 
 # Problem Statement
