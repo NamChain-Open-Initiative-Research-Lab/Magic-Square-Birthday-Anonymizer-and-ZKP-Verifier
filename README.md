@@ -1,4 +1,5 @@
-# Magic Square Birthday Anonymizer and ZKP Verifier
+# Magic Square Birthday Anonymizer and ZKP Verifier ![](https://img.shields.io/badge/Domain-Security-blue) ![](https://img.shields.io/badge/Focus-Magic_Square-yellow) ![](https://img.shields.io/badge/Security-Privacy-blue) ![](https://img.shields.io/badge/Security-ZKP-blue)
+
 Birthday Anonymizer and Zero Knowledge Verifier based on Ramanujan's Magic Square
 
 # Problem Statement
