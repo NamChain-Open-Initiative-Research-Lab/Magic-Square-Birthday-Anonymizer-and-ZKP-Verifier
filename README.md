@@ -152,4 +152,4 @@ Interactive zero-knowledge proofs require interaction between the individual (or
   - Feige, U., Fiat, A. & Shamir, A. Zero-knowledge proofs of identity. J. Cryptology 1, 77–94 (1988). https://doi.org/10.1007/BF02351717
   
 # Cite as
-Ramaguru R. Birthday Anonymizer and Zero Knowledge Verifier based on Ramanujan's Magic Square. NamChain Open Initiative Research Lab. Feb 24, 2021. https://namchain-open-initiative-research-lab.github.io/Birthday-Anonymizer-ZKP-Verifier/
+[Ramaguru R.]() **Birthday Anonymizer and Zero Knowledge Verifier based on Ramanujan's Magic Square.** _NamChain Open Initiative Research Lab_. Feb 24, 2021. [https://namchain-open-initiative-research-lab.github.io/Birthday-Anonymizer-ZKP-Verifier/](#)
